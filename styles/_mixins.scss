@@ -1,0 +1,23 @@
+  @mixin breakpoint-desktop-sd {
+    @media screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+  
+  @mixin breakpoint-tablet-hd {
+    @media screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+  
+  @mixin breakpoint-tablet-sd {
+    @media screen and (max-width: 768px){
+      @content;
+    }
+  }
+
+  @mixin breakpoint-mobile {
+    @media screen and (max-width: 500px){
+      @content;
+    }
+  }

@@ -1,0 +1,225 @@
+@use "../mixins" as *;
+@use "../ui-components/header";
+@use "../base";
+@use "./cards";
+@use "../ui-components/footer";
+@use "./table";
+@use "./services";
+@use "../ui-components/popup";
+@use "../ui-components/header-mobile";
+@use "../ui-components/popup-footer";
+
+
+.top-site {
+    margin-bottom: 60px;
+}
+
+.new-page {
+    display: inline-flex;
+    position: absolute;
+    margin-left: 4px;
+}
+
+.add-services {
+    margin-right: 4px;
+}
+
+.services-name {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    color: #FFFFFF;
+}
+
+.it__commerce {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    max-width: 1080px;
+    margin-left: auto;
+
+    &__image {
+        padding: 14px;
+        width: 92px;
+        margin: 0 auto;
+        height: 92px;
+        background: #FFFFFF;
+        border-radius: 24px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 46px;
+        background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 30px;
+        color: #FFFFFF;
+    }
+
+    &__button {
+        margin: 0 auto;
+        padding: 18px 30px;
+        border: #24A3FF;
+        width: 208px;
+        height: 56px;
+        background: #24A3FF;
+        box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFFFFF;
+
+        &:hover {
+            background: #0085FF;
+        }
+
+        &:active {
+            background: #006CCF;
+        }
+
+        &__name {
+            text-align: center;
+        }
+    }
+}
+
+.line {
+    max-width: 1080px;
+    height: 4px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.services-area {
+    max-width: 1080px;
+    margin: 30px auto 60px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 27px;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+
+    &__block {
+        display: flex;
+        gap: 60px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 15px;
+            width: 510px;
+        }
+
+        .blocks {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            color: #FFFFFF;
+            list-style-type: none;
+        }
+
+        .blocks::before {
+            content: url(../../photos/Dot-separator.svg);
+            margin-right: 8px;
+        }
+    }
+}
+
+
+@include breakpoint-tablet-hd {
+
+    .services-area,
+    .it__commerce,
+    .line {
+        max-width: 904px;
+    }
+}
+
+@include breakpoint-tablet-sd {
+
+    .services-area,
+    .it__commerce,
+    .line {
+        max-width: 648px;
+    }
+
+    .it__commerce {
+        margin-top: 0;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        max-width: 398px;
+        padding: 30px 0 30px;
+    }
+
+    .footer__top {
+        order: 1;
+        margin-bottom: 21px;
+    }
+
+    .footer__top__signature {
+        order: 3;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    .footer__bottom {
+        order: 2;
+        margin-top: 0;
+    }
+
+    .new-page {
+        margin-left: 137px;
+    }
+
+    .header__second {
+        margin-left: -30px;
+    }
+}
+
+@include breakpoint-mobile {
+
+    .services-area,
+    .it__commerce,
+    .line {
+        max-width: 315px;
+    }
+
+    .services-area__block {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .footer__top__signature {
+        margin-top: 0;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .it__commerce {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,114 @@
+@use "../mixins" as *;
+
+.publications {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.footer {
+    padding: 30px 60px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &__top {
+        align-items: center;
+        display: inline-flex;
+        gap: 10px;
+
+        &__adress {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: #323264;
+        }
+
+        &__span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #B3B3BA;
+        }
+
+        &__link {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #24A3FF;
+        }
+
+        &__signature {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: right;
+            color: #B3B3BA;
+            float: right;
+            display: flex;
+        }
+    }
+
+    &__bottom {
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        margin-top: 21px;
+        flex-wrap: wrap;
+
+        &__icon {
+            fill: #24A3FF;
+
+            &:hover {
+                fill: #F0145A;
+            }
+        }
+
+        &__number {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: right;
+            color: #46466E;
+        }
+
+        &__mail {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: #24A3FF;
+
+            &:hover {
+                color: #F0145A;
+            }
+        }
+    }
+}
+
+@include breakpoint-mobile {
+    .footer {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+
+        &__top {
+            flex-direction: column;
+            order: 1;
+
+            &__signature {
+                order: 3;
+                justify-content: center;
+            }
+
+            &__span {
+                display: none;
+            }
+        }
+
+        &__bottom {
+            flex-direction: column;
+            order: 2;
+            margin-bottom: 30px;
+        }
+    }
+}

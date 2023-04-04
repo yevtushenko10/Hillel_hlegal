@@ -1,0 +1,155 @@
+@use "../mixins" as *;
+
+.comments {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 60px 60px 0 60px;
+
+    &__comment {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1320px;
+        background: #F5F5FA;
+        border-radius: 12px;
+        overflow: hidden;
+
+        &__photo {
+            object-fit: cover;
+            width: 400px;
+            height: 344px;
+        }
+
+        &__text {
+            padding: 30px;
+
+            .button-link {
+                display: inline-flex;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 13px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: #24A3FF;
+
+                &__way {
+                    margin-left: 2px;
+                }
+
+                &:hover {
+                    color: #F0145A;
+
+                    svg {
+                        path {
+                            stroke: #F0145A;
+                        }
+                    }
+                }
+            }
+
+            .title {
+                max-width: 860px;
+                margin-top: 5px;
+                margin-bottom: 30px;
+            }
+
+            .person-name {
+                margin-bottom: 6px;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+                color: #B3B3BA;
+            }
+
+            .person-position {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 22px;
+                color: #B3B3BA;
+            }
+        }
+
+    }
+
+    &__slider {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 60px;
+
+        &__circle {
+            background: #24A3FF;
+            opacity: 0.2;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+    }
+}
+
+#current-circle {
+    background: #24A3FF;
+    opacity: 1;
+}
+
+@include breakpoint-desktop-sd {
+    .syllable {
+        display: none;
+    }
+}
+
+
+@include breakpoint-tablet-hd {
+    .comments__comment__text {
+        max-width: 504px;
+    }
+
+    .comments__comment {
+        overflow: hidden;
+    }
+
+    .comments__comment__photo {
+        width: 400px;
+        height: 528px;
+    }
+
+    .syllable {
+        display: none;
+    }
+}
+
+@include breakpoint-tablet-sd {
+    .comments__comment__text {
+        max-width: 631px;
+    }
+
+    .comments__comment__photo {
+        width: 648px;
+        height: 500px;
+    }
+
+    .comments__comment__text .title {
+        max-width: 588px;
+    }
+
+    .syllable {
+        display: none;
+    }
+}
+
+@include breakpoint-mobile {
+    .comments {
+        padding: 30px 30px 0 30px;
+    }
+
+    .comments__comment__text .title {
+        font-size: 30px;
+        line-height: 37px;
+        padding: 0;
+        max-width: 255px;
+    }
+
+    .syllable {
+        display: block;
+    }
+}

@@ -1,0 +1,113 @@
+@use "../mixins" as *;
+
+.main__title {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+    margin: 250px 30px;
+}
+
+.main__logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 0;
+}
+
+.main__button {
+    display: inline-flex;
+    position: relative;
+    margin: 30px 0 90px 0;
+    z-index: 1;
+    left: 49%;
+    animation: pulse 2s infinite;
+
+    .button-scroll {
+        fill: linear-gradient(128.63deg, #323264 0%, #323264 73.96%, #A54B5F 100%);
+        ;
+        stroke: white;
+
+        &:hover {
+            opacity: 0.5;
+            stroke: #F0145A;
+        }
+    }
+
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+            border-radius: 50px;
+
+        }
+
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            border-radius: 50px;
+        }
+    }
+}
+
+@include breakpoint-tablet-sd {
+    .main__logo {
+        max-width: 768px;
+        max-height: 1024px;
+        overflow: hidden;
+        left: 50%;
+        width: 100%;
+
+        .main-mobile-logo {
+            width: 893px;
+            height: 1024px;
+        }
+    }
+
+    .main__title {
+        margin-top: 210px;
+    }
+
+    .main__button {
+        margin-top: 167px;
+    }
+}
+
+@include breakpoint-mobile {
+    .main__logo {
+        width: 375px;
+        height: 600px;
+        overflow: hidden;
+        left: 50%;
+        width: 100%;
+
+        .main-mobile-logo {
+            width: 523px;
+            height: 600px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 0;
+        }
+    }
+
+    .main__title {
+        margin: 129px 30px;
+    }
+
+    .main__button {
+        margin-top: 30px;
+    }
+}

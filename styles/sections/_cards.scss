@@ -1,0 +1,192 @@
+@use "../mixins" as *;
+
+.down-site {
+    background: #F5F5FA;
+
+    .publications {
+        max-width: 1440px;
+        margin: 0 auto;
+
+        &__block {
+            padding: 30px 60px 0;
+
+            .button-link {
+                display: inline-flex;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 13px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: #24A3FF;
+
+                &__way {
+                    margin-left: 2px;
+                }
+
+                &:hover {
+                    color: #F0145A;
+
+                    svg {
+                        path {
+                            stroke: #F0145A;
+                        }
+                    }
+                }
+            }
+
+            &__title {
+                font-weight: 700;
+                font-size: 38px;
+                line-height: 46px;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            &__cards {
+                display: flex;
+                gap: 30px;
+ 
+                .card {
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    overflow: hidden;
+
+                    &__block {
+                        padding: 30px;
+
+                        &__title {
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 20px;
+                            margin-bottom: 15px;
+                            color: #24A3FF;
+
+                            &:hover {
+                                color: #F0145A;
+                            }
+                        }
+
+                        &__data {
+                            font-weight: 700;
+                            font-size: 12px;
+                            line-height: 15px;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                            color: #B3B3BA;
+                        }
+
+                        &__line {
+                            height: 4px;
+                            background: #E6E6F0;
+                            margin-top: 15px;
+                        }
+
+                        &__text {
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 22px;
+                            color: #000000;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+
+            &__line {
+                max-width: 1320px;
+                height: 2px;
+                background: #E6E6F0;
+                margin-top: 30px;
+            }
+
+        }
+    }
+}
+
+@include breakpoint-desktop-sd {
+    .card {
+        max-width: 420px;
+    }
+}
+
+@include breakpoint-tablet-hd {
+    .card {
+        width: 281px;
+        height: 556px;
+    }
+
+    .card-photo {
+        width: 281px;
+        object-fit: cover;
+    }
+}
+
+@include breakpoint-tablet-sd {
+    .down-site .publications__block__cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 309px;
+        height: 514px;
+    }
+
+    .card-photo {
+        width: 309px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    #last-card {
+        width: 648px;
+        height: 388px;
+    }
+
+    #last-photo {
+        width: 648px;
+        height: 200px;
+    }
+}
+
+@include breakpoint-mobile {
+    .card {
+        width: 315px;
+        height: 432px;
+    }
+
+    .card-photo {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .down-site .publications__block {
+        padding: 30px 30px 0;
+    }
+
+    .down-site .publications__block__title {
+        width: 242px;
+        height: 37px;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 37px;
+    }
+
+    #pre-last {
+        height: 432px;
+        width: 100%;
+    }
+    
+    #mid-last {
+        height: 514px;
+        width: 100%;
+    }
+
+    #last-card {
+        height: 454px;
+    }
+}

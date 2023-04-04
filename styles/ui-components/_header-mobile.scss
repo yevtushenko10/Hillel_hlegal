@@ -1,0 +1,93 @@
+@use "../mixins" as *;
+@use "../base";
+
+.header-small {
+    display: none;
+}
+
+
+@include breakpoint-mobile {
+    .header-small__upper {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        align-items: center;
+        padding: 10px 15px;
+        height: 45px;
+        background: rgba(245, 245, 250, 0.2);
+        justify-content: space-between;
+
+        .languages {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .number {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: right;
+            color: #FFFFFF;
+        }
+
+        .header__second__left__unconnected {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+            padding: 5px 7px;
+            width: 33px;
+            height: 25px;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+            }
+        }
+    }
+
+    .header-small__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        position: relative;
+        z-index: 1;
+
+        .mobile-head-part {
+            display: flex;
+            gap: 4px;
+
+            .mobile-name-page {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
+                color: #FFFFFF;
+            }
+        }
+
+        .tab-mobile {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            padding: 10px 7px;
+
+            &__line {
+                display: flex;
+                gap: 3px;
+                flex-direction: column;
+
+                .line {
+                    border: 2px solid #FFFFFF;
+                    width: 18px;
+                }
+            }
+
+            &:active {
+                background: #E6E6F0;
+                border-radius: 8px;
+            }
+        }
+    }
+}

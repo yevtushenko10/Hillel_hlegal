@@ -1,0 +1,138 @@
+@use "../mixins" as *;
+
+#myForm {
+    display: none;
+    text-align: start;
+}
+
+#myForm:target {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(50,50,100,0.7);
+    width: 100%;
+    z-index: 3;
+    height: 100%;
+}
+
+.popup-title {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 46px;
+    background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    margin-right: 41px;
+}
+
+.popup-exit {
+    height: 32px;
+
+    &:hover {
+        background: #E6E6F0;
+        border-radius: 8px;
+    }
+}
+
+
+.popop-second-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #B3B3BA;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.send {
+    padding: 18px 30px;
+    gap: 10px;
+    max-width: 590px;
+    height: 56px;
+    background: #24A3FF;
+    box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    border: #24A3FF;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 15px;
+
+    &:hover {
+        background: #0085FF;
+    }
+
+    &:active {
+        background: #006CCF;
+    }
+}
+
+.main-title {
+    display: flex;
+}
+
+.form-container {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    background: #F5F5FA;
+    box-shadow: 0px 15px 80px rgba(40, 40, 86, 0.5);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+input {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+    max-width: 590px;
+    height: 56px;
+    margin-bottom: 15px;
+    outline-color: #24A3FF;
+    padding: 15px;
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #B3B3BA;
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+}
+
+.message {
+    padding: 30px 0 89px 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@include breakpoint-mobile {
+    .form-container {
+        min-width: 315px;
+        min-height: 640px;
+    }
+
+    .popup-title {
+        font-size: 30px;
+        line-height: 37px;
+        margin-right: 17px;
+    }
+}

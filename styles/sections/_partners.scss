@@ -1,0 +1,65 @@
+@use "../mixins" as *;
+
+.partners {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &__block {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        &__title {
+            display: inline-flex;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #323264;
+            text-align: center;
+        }
+    }
+
+    &__sponsors {
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__banner {
+            max-height: 120px;
+        }
+    }
+}
+
+@include breakpoint-tablet-hd {
+    .partners__sponsors {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+
+        &__banner {
+            max-height: 85px;
+        }
+    }
+
+    .background-spons {
+        object-fit: none;
+    }
+}
+
+@include breakpoint-mobile {
+    .partners__sponsors__banner {
+        max-height: 120px;
+    }
+
+    .background-spons {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .banner-no {
+        display: none;
+    }
+}
